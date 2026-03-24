@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Interativo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="fundo-categoria" class="fundo-categoria oculto">
+    <div id="fundo-track" class="fundo-track"></div>
+  </div>
+
+  <div class="bg-animado">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <button id="btn-config" class="btn-engrenagem" title="Configurações">⚙</button>
+
+  <main class="app">
+    <section id="menu-inicial" class="tela ativa">
+      <div class="painel grande">
+        <h1>Quiz Interativo</h1>
+        <p class="subtitulo">Escolha um tema ou entre no modo competição.</p>
+
+        <div class="grade-temas">
+          <button class="tema-btn tema-curiosidades" data-tema="curiosidades">
+            <span>Curiosidades</span>
+          </button>
+
+          <button class="tema-btn tema-jogos" data-tema="jogos">
+            <span>Jogos</span>
+          </button>
+
+          <button class="tema-btn tema-animes" data-tema="animes">
+            <span>Animes</span>
+          </button>
+
+          <button class="tema-btn tema-musica" data-tema="musica">
+            <span>Música</span>
+          </button>
+        </div>
+
+        <div class="competicao-area">
+          <button id="btn-competicao" class="btn-competicao">Modo Competição</button>
+          <p>30 perguntas aleatórias da dificuldade escolhida.</p>
+        </div>
+
+        <div class="menu-acoes">
+          <button id="btn-sair" class="btn-secundario">Sair</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="selecao-dificuldade" class="tela">
+      <div class="painel medio">
+        <h2 id="titulo-dificuldade">Escolha a dificuldade</h2>
+        <p id="subtitulo-dificuldade" class="subtitulo">Selecione um modo para começar.</p>
+
+        <div class="grade-dificuldades">
+          <button class="dificuldade-btn" data-dificuldade="facil">Fácil</button>
+          <button class="dificuldade-btn" data-dificuldade="medio">Médio</button>
+          <button class="dificuldade-btn" data-dificuldade="dificil">Difícil</button>
+        </div>
+
+        <div class="menu-acoes">
+          <button id="btn-voltar-menu" class="btn-secundario">Voltar</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz" class="tela">
+      <div class="painel quiz-painel">
+        <div class="topo-quiz">
+          <div>
+            <h2 id="tema-titulo">Tema</h2>
+            <p id="modo-info" class="modo-info">Modo normal</p>
+          </div>
+
+          <div class="lado-direito-topo">
+            <span id="contador">Pergunta 1/10</span>
+            <div class="barra-progresso">
+              <div id="progresso" class="progresso"></div>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="pergunta" class="pergunta">Pergunta aqui</h3>
+
+        <div id="respostas" class="respostas"></div>
+
+        <p id="feedback" class="feedback"></p>
+
+        <button id="proxima-btn" class="btn-principal oculto">Próxima</button>
+      </div>
+    </section>
+
+    <section id="resultado" class="tela">
+      <div class="painel medio resultado-painel">
+        <h2>Resultado Final</h2>
+        <p id="pontuacao-final" class="pontuacao-final"></p>
+        <button id="reiniciar-btn" class="btn-principal">Voltar ao menu</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="config-modal" class="modal">
+    <div class="modal-conteudo">
+      <h2>Configurações</h2>
+
+      <label class="config-item">
+        <input type="checkbox" id="toggle-darkmode">
+        Modo escuro
+      </label>
+
+      <label class="config-item">
+        <input type="checkbox" id="toggle-som" checked>
+        Som ligado
+      </label>
+
+      <div class="volume-box">
+        <label for="volume-slider">Volume da música</label>
+        <input type="range" id="volume-slider" min="0" max="100" value="25">
+        <span id="volume-valor">25%</span>
+      </div>
+
+      <button id="fechar-config" class="btn-principal" type="button">Fechar</button>
+    </div>
+  </div>
+
+  <audio id="bg-music" loop preload="auto">
+    <source src="back_song.opus" type='audio/ogg; codecs="opus"'>
+    <source src="back_songa.m4a" type="audio/mp4">
+    <source src="back_songm.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
