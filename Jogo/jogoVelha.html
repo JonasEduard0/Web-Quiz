@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Jogo da Velha</title>
+
+  <link rel="stylesheet" href="styleVelha.css">
+</head>
+
+<body>
+
+  <div class="fundo-loop">
+    <div class="fundo-track">
+
+      <div class="fundo-item" style="background-image: url('jogo.jpg')"></div>
+      <div class="fundo-item" style="background-image: url('anime.jpg')"></div>
+      <div class="fundo-item" style="background-image: url('curiosidade.jpg')"></div>
+      <div class="fundo-item" style="background-image: url('musica.jpg')"></div>
+
+      <div class="fundo-item" style="background-image: url('jogo.jpg')"></div>
+      <div class="fundo-item" style="background-image: url('anime.jpg')"></div>
+      <div class="fundo-item" style="background-image: url('curiosidade.jpg')"></div>
+      <div class="fundo-item" style="background-image: url('musica.jpg')"></div>
+
+    </div>
+  </div>
+
+  <div class="overlay"></div>
+
+  <div class="bg-animado">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <main class="container">
+
+    <div class="painel">
+
+      <h1>Jogo da Velha</h1>
+
+      <p id="status">
+        Vez do jogador X
+      </p>
+
+      <div class="tabuleiro" id="tabuleiro">
+
+        <button class="casa" data-index="0"></button>
+        <button class="casa" data-index="1"></button>
+        <button class="casa" data-index="2"></button>
+
+        <button class="casa" data-index="3"></button>
+        <button class="casa" data-index="4"></button>
+        <button class="casa" data-index="5"></button>
+
+        <button class="casa" data-index="6"></button>
+        <button class="casa" data-index="7"></button>
+        <button class="casa" data-index="8"></button>
+
+      </div>
+
+      <div class="acoes">
+
+        <button id="reiniciar-btn" class="btn-principal">
+          Reiniciar
+        </button>
+
+        <button id="voltar-btn" class="btn-secundario">
+          Voltar ao Hub
+        </button>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <audio id="bg-music" loop preload="auto">
+    <source src="back_song.opus" type='audio/ogg; codecs="opus"'>
+    <source src="back_songa.m4a" type="audio/mp4">
+    <source src="back_songm.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="scriptVelha.js"></script>
+
+</body>
+</html>
