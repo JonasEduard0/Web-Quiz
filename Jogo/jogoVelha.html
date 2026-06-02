@@ -11,24 +11,6 @@
 
 <body>
 
-  <div class="fundo-loop">
-    <div class="fundo-track">
-
-      <div class="fundo-item" style="background-image: url('jogo.jpg')"></div>
-      <div class="fundo-item" style="background-image: url('anime.jpg')"></div>
-      <div class="fundo-item" style="background-image: url('curiosidade.jpg')"></div>
-      <div class="fundo-item" style="background-image: url('musica.jpg')"></div>
-
-      <div class="fundo-item" style="background-image: url('jogo.jpg')"></div>
-      <div class="fundo-item" style="background-image: url('anime.jpg')"></div>
-      <div class="fundo-item" style="background-image: url('curiosidade.jpg')"></div>
-      <div class="fundo-item" style="background-image: url('musica.jpg')"></div>
-
-    </div>
-  </div>
-
-  <div class="overlay"></div>
-
   <div class="bg-animado">
     <span></span>
     <span></span>
@@ -46,6 +28,50 @@
       <p id="status">
         Vez do jogador X
       </p>
+
+      <div class="config-jogadores">
+
+    <input
+        type="text"
+        id="nomeX"
+        placeholder="Nome do Jogador 1"
+        value="Jogador 1"
+    >
+
+    <input
+        type="text"
+        id="nomeO"
+        placeholder="Nome do Jogador 2"
+        value="Jogador 2"
+    >
+
+    <div class="simbolos-box">
+
+    <select id="simboloX">
+
+        <option>X</option>
+        <option>😎</option>
+        <option>🔥</option>
+        <option>⭐</option>
+        <option>⚔️</option>
+        <option>🐱</option>
+
+    </select>
+
+    <select id="simboloO">
+
+        <option>O</option>
+        <option>👑</option>
+        <option>💎</option>
+        <option>🌙</option>
+        <option>🛡️</option>
+        <option>🐶</option>
+
+    </select>
+
+</div>
+
+</div>
 
       <div class="tabuleiro" id="tabuleiro">
 

@@ -14,6 +14,29 @@ body {
   background: #050816;
 
   position: relative;
+
+  background-image: url("velha.jpg");
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+}
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0,0,0,0.45);
+
+    z-index: -1;
+
 }
 
 .container {
@@ -140,53 +163,6 @@ h1 {
   background: rgba(255,255,255,0.2);
 }
 
-.fundo-loop {
-  position: fixed;
-  inset: 0;
-
-  overflow: hidden;
-
-  z-index: 0;
-
-  opacity: 0.22;
-}
-
-.fundo-track {
-  display: flex;
-
-  width: max-content;
-  height: 100%;
-
-  animation: deslizar 35s linear infinite;
-}
-
-.fundo-item {
-  width: 100vw;
-  height: 100vh;
-
-  flex-shrink: 0;
-
-  background-size: cover;
-  background-position: center;
-
-  filter: blur(2px);
-}
-
-.overlay {
-  position: fixed;
-  inset: 0;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(15,23,42,0.85),
-      rgba(30,27,75,0.88),
-      rgba(49,46,129,0.88)
-    );
-
-  z-index: 1;
-}
-
 .bg-animado {
   position: fixed;
   inset: 0;
@@ -240,6 +216,44 @@ h1 {
   left: 88%;
   width: 180px;
   height: 180px;
+}
+
+.config-jogadores {
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  margin-bottom: 25px;
+}
+
+.config-jogadores input {
+
+  padding: 12px;
+
+  border-radius: 10px;
+
+  border: none;
+}
+
+.simbolos-box {
+
+  display: flex;
+
+  gap: 12px;
+
+  justify-content: center;
+}
+
+.simbolos-box select {
+
+  padding: 10px;
+
+  border-radius: 10px;
+
+  border: none;
+
+  font-size: 18px;
 }
 
 @keyframes flutuar {

@@ -18,6 +18,49 @@ let tabuleiro = [
   "", "", ""
 ];
 
+localStorage.setItem(
+    "darkMode",
+    toggleDarkmode.checked
+);
+
+localStorage.setItem(
+    "somLigado",
+    toggleSom.checked
+);
+
+localStorage.setItem(
+    "volume",
+    volumeSlider.value
+);
+
+toggleDarkmode.checked =
+    localStorage.getItem("darkMode") === "true";
+
+toggleSom.checked =
+    localStorage.getItem("somLigado") !== "false";
+
+volumeSlider.value =
+    localStorage.getItem("volume") || 25;
+
+const nomeXInput = document.getElementById("nomeX");
+const nomeOInput = document.getElementById("nomeO");
+
+function nomeJogador(simbolo) {
+
+  if (simbolo === "X") {
+    return nomeXInput.value || "Jogador 1";
+  }
+
+  return nomeOInput.value || "Jogador 2";
+}
+
+const simboloXSelect = document.getElementById("simboloX");
+
+const simboloOSelect = document.getElementById("simboloO");
+
+let simboloX = "X";
+let simboloO = "O";
+
 const combinacoesVitoria = [
 
   [0,1,2],
@@ -57,20 +100,20 @@ casas.forEach((casa) => {
 
 function jogar(evento) {
 
-  const casa = evento.target;
+  simboloX = simboloXSelect.value;
+  simboloO = simboloOSelect.value;
 
+  const casa = evento.target;
   const index = casa.dataset.index;
 
   if (!jogoAtivo) return;
-
   if (tabuleiro[index] !== "") return;
 
   tabuleiro[index] = jogadorAtual;
 
-  casa.textContent = jogadorAtual;
+  casa.textContent = jogadorAtual === "X" ? simboloX : simboloO;
 
   verificarResultado();
-
 }
 
 function verificarResultado() {
@@ -98,7 +141,7 @@ function verificarResultado() {
   if (venceu) {
 
     statusTexto.textContent =
-      `Jogador ${jogadorAtual} venceu!`;
+      `${nomeJogador(jogadorAtual)} venceu!`;
 
     jogoAtivo = false;
 
@@ -118,7 +161,7 @@ function verificarResultado() {
     jogadorAtual === "X" ? "O" : "X";
 
   statusTexto.textContent =
-    `Vez do jogador ${jogadorAtual}`;
+    `Vez de ${nomeJogador(jogadorAtual)} (${jogadorAtual})`;
 
 }
 
