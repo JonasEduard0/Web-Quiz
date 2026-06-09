@@ -18,30 +18,6 @@ let tabuleiro = [
   "", "", ""
 ];
 
-localStorage.setItem(
-    "darkMode",
-    toggleDarkmode.checked
-);
-
-localStorage.setItem(
-    "somLigado",
-    toggleSom.checked
-);
-
-localStorage.setItem(
-    "volume",
-    volumeSlider.value
-);
-
-toggleDarkmode.checked =
-    localStorage.getItem("darkMode") === "true";
-
-toggleSom.checked =
-    localStorage.getItem("somLigado") !== "false";
-
-volumeSlider.value =
-    localStorage.getItem("volume") || 25;
-
 const nomeXInput = document.getElementById("nomeX");
 const nomeOInput = document.getElementById("nomeO");
 
@@ -193,5 +169,63 @@ function reiniciarJogo() {
 voltarBtn.addEventListener("click", () => {
 
   window.location.href = "index.html";
+
+});
+
+const btnConfig =
+    document.getElementById("btn-config");
+
+const modal =
+    document.getElementById("config-modal");
+
+const fecharConfig =
+    document.getElementById("fechar-config");
+
+const toggleDarkmode =
+    document.getElementById("toggle-darkmode");
+
+const toggleSom =
+    document.getElementById("toggle-som");
+
+const volumeSlider =
+    document.getElementById("volume-slider");
+
+const volumeValor =
+    document.getElementById("volume-valor");
+
+btnConfig.addEventListener("click", () => {
+
+    modal.classList.add("ativo");
+
+});
+
+fecharConfig.addEventListener("click", () => {
+
+    modal.classList.remove("ativo");
+
+});
+
+toggleDarkmode.addEventListener("change", () => {
+
+    document.body.classList.toggle(
+        "dark",
+        toggleDarkmode.checked
+    );
+
+});
+
+toggleSom.addEventListener("change", () => {
+
+    musica.muted = !toggleSom.checked;
+
+});
+
+volumeSlider.addEventListener("input", () => {
+
+    musica.volume =
+        volumeSlider.value / 100;
+
+    volumeValor.textContent =
+        volumeSlider.value + "%";
 
 });

@@ -166,10 +166,9 @@ h1 {
 .bg-animado {
   position: fixed;
   inset: 0;
-
   overflow: hidden;
-
   z-index: 2;
+  pointer-events: none;
 }
 
 .bg-animado span {
@@ -297,4 +296,81 @@ h1 {
     flex-direction: column;
   }
 
+}
+
+.btn-engrenagem {
+
+  position: fixed;
+
+  top: 20px;
+  right: 20px;
+
+  width: 55px;
+  height: 55px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  font-size: 28px;
+
+  cursor: pointer;
+
+  background: rgba(255,255,255,0.15);
+
+  color: white;
+
+  backdrop-filter: blur(8px);
+
+  z-index: 999;
+}
+
+.modal {
+
+  display: none;
+
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0,0,0,0.6);
+
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+}
+
+.modal.ativo {
+  display: flex;
+}
+
+.modal-conteudo {
+
+  background: #1e293b;
+
+  padding: 25px;
+
+  border-radius: 20px;
+
+  width: 320px;
+
+  text-align: center;
+}
+
+.config-item {
+
+  display: block;
+
+  margin: 15px 0;
+}
+
+.volume-box {
+
+  margin: 20px 0;
+}
+
+body.dark {
+
+  filter: brightness(0.75);
 }
