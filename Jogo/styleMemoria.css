@@ -1,0 +1,176 @@
+body {
+    background-image: url("backMemoria.avif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+.painel {
+
+    width: 100%;
+    max-width: 850px;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    backdrop-filter: blur(12px);
+
+    background: rgba(255,255,255,0.08);
+}
+
+.tabuleiro {
+
+    margin-top: 25px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.carta {
+
+    height: 120px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    font-size: 50px;
+
+    background: rgba(255,255,255,0.15);
+
+    color: white;
+
+    transition: 0.2s;
+}
+
+.carta:hover {
+
+    transform: scale(1.05);
+}
+
+.virada {
+
+    background: rgba(255,255,255,0.25);
+}
+
+.acoes {
+
+    margin-top: 25px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+}
+
+.btn-principal,
+.btn-secundario {
+
+    padding: 14px 22px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+}
+
+.btn-principal {
+
+    background: #2563eb;
+
+    color: white;
+}
+
+.btn-secundario {
+
+    background: rgba(255,255,255,0.15);
+
+    color: white;
+}
+
+.btn-engrenagem {
+
+    position: fixed;
+
+    top: 20px;
+    right: 20px;
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 28px;
+
+    z-index: 1000;
+}
+
+.modal {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,0.7);
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 2000;
+}
+
+.modal-conteudo {
+
+    background: #1e293b;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    width: 320px;
+}
+
+.config-item {
+
+    display: block;
+
+    margin: 15px 0;
+}
+
+.volume-box {
+
+    margin: 15px 0;
+}
+
+.dark .painel {
+
+    background: rgba(0,0,0,0.65);
+}
